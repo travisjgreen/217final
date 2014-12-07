@@ -80,10 +80,14 @@ $(function(){
             type: "POST",
             data: {order: JSON.stringify(favorite)},
             success: function(data){
-                navigator.notification.beep(2);
-                navigator.notification.alert(data);
+                myNotify(data);
             }
         })
-    })
+    });
+
+    function myNotify(data) {
+        navigator.notification.beep(2);
+        navigator.notification.alert(data);
+    }
 });
 
