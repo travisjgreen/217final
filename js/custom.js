@@ -7,8 +7,8 @@ $(function(){
             var lat = pos.coords.latitude;
             var lng = pos.coords.longitude;
 //            var map = '<iframe class="img-responsive" src="https://www.google.com/maps?saddr='+lat+'+'+lng+'&daddr=2427+North+Stevens+Street+Spokane+WA+99205&output=embed" height="300" frameborder="0" style="border:0"></iframe>';
-            var map = '<iframe class="img-responsive" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyDCSXNtDdcEe1ZqU2ZcODV-WjBgN0YvsbA&origin='+lat+'+'+lng+'Norway&destination=2427+North+Stevens+Street+Spokane+WA+99205&avoid=tolls|highways" height="300" frameborder="0" style="border:0"></iframe>';
-            $('#gmap').html(map);
+            var url = 'https://www.google.com/maps/embed/v1/directions?key=AIzaSyDCSXNtDdcEe1ZqU2ZcODV-WjBgN0YvsbA&origin='+lat+'+'+lng+'Norway&destination=2427+North+Stevens+Street+Spokane+WA+99205&avoid=tolls|highways';
+            $('#gmap').attr('src', url);
         });
     }
 
