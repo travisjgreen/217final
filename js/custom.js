@@ -6,7 +6,7 @@ $(function(){
         navigator.geolocation.getCurrentPosition(function(pos){
             var lat = pos.coords.latitude;
             var lng = pos.coords.longitude;
-            var url = 'https://www.google.com/maps/embed/v1/directions?key=AIzaSyDCSXNtDdcEe1ZqU2ZcODV-WjBgN0YvsbA&origin='+lat+'+'+lng+'&destination=2427+North+Stevens+Street+Spokane+WA+99205&avoid=tolls|highways';
+            var url = 'https://www.google.com/maps/embed/v1/directions?key=AIzaSyDCSXNtDdcEe1ZqU2ZcODV-WjBgN0YvsbA&origin='+lat+'+'+lng+'&destination=2427+North+Stevens+Street+Spokane+WA+99205&avoid=tolls|highways&mode=driving';
             $('#gmap').attr('src', url);
         });
     }
@@ -80,10 +80,13 @@ $(function(){
             type: "POST",
             data: {order: JSON.stringify(favorite)},
             success: function(data){
-                navigator.notification.alert(data, function() {
-                    $.mobile.pageContainer.pagecontainer("change", "#home");
-                }, 'Have a Nice Day!', 'Okay');
+                navigator.notification.beep(2);
+                navigator.notification.alert(data, alertDismissed, 'Have a Nice Day!', 'Okay');
             }
         })
     })
 });
+
+function alertDismissed() {
+    $.mobile.pageContainer.pagecontainer("change", "#home");
+}
