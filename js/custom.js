@@ -80,17 +80,10 @@ $(function(){
             type: "POST",
             data: {order: JSON.stringify(favorite)},
             success: function(data){
-                notify(data);
+                navigator.notification.beep(2);
+                navigator.notification.alert(data);
             }
         })
     })
 });
 
-function alertDismissed() {
-    $.mobile.pageContainer.pagecontainer("change", "#home");
-}
-
-function notify(data) {
-    navigator.notification.beep(2);
-    navigator.notification.alert(data, alertDismissed, 'Have a Nice Day!', 'Okay');
-}
