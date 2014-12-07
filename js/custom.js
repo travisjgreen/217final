@@ -7,6 +7,14 @@ $(function(){
         navigator.geolocation.getCurrentPosition(function(pos){
             var lat = pos.coords.latitude;
             var lng = pos.coords.longitude;
+            alert('Latitude: '          + pos.coords.latitude          + '\n' +
+                'Longitude: '         + pos.coords.longitude         + '\n' +
+                'Altitude: '          + pos.coords.altitude          + '\n' +
+                'Accuracy: '          + pos.coords.accuracy          + '\n' +
+                'Altitude Accuracy: ' + pos.coords.altitudeAccuracy  + '\n' +
+                'Heading: '           + pos.coords.heading           + '\n' +
+                'Speed: '             + pos.coords.speed             + '\n' +
+                'Timestamp: '         + pos.timestamp                + '\n');
             var map = '<iframe class="img-responsive" src="https://www.google.com/maps?saddr='+lat+'+'+lng+'&daddr=2427+North+Stevens+Street+Spokane+WA+99205&output=embed" height="300" frameborder="0" style="border:0"></iframe>';
             $('#gmap').html(map);
         });
