@@ -1,0 +1,17 @@
+[data-role='footer'] .ui-btn, #add {
+    display: block !important;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.lower {
+    text-transform: lowercase;
+}
+
+
+
+#order-view {
+    display: none;
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mom and Pop Pizza</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body>
+
+    <div data-theme="a" data-role="page" id="home"><!---------------------------------------Start Home Page---------------->
+        <div data-role="header">
+            <h1>Mom and Pop<br/>Pizza</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <ul data-role="listview">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#about-us">About Us</a></li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="menu"><!---------------------------------------Start Menu Page---------------->
+        <div data-role="header">
+            <a href="#home" data-icon="back" title="Back to Home Page">Home</a>
+            <h1>Menu</h1>
+            <div data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a class="menu ui-btn-active ui-state-persist" href="#menu">Menu</a></li>
+                    <li><a class="order" href="#order">Order</a></li>
+                    <li><a class="location" href="#location">Location</a></li>
+                    <li><a class="about-us" href="#about-us">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="ui-corner-all custom-corners">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Pizza Toppings</h3>
+                </div>
+                <div class="ui-body ui-body-a">
+                    <fieldset data-role="controlgroup">
+                        <legend>Select your toppings!</legend>
+                        <input data-ingredient="topping" name="checkbox-1a" id="checkbox-1a" checked="" type="checkbox" value="cheese">
+                        <label for="checkbox-1a">Cheese</label>
+                        <input data-ingredient="topping" name="checkbox-2a" id="checkbox-2a" type="checkbox" value="pepperoni">
+                        <label for="checkbox-2a">Pepperoni</label>
+                        <input data-ingredient="topping" name="checkbox-3a" id="checkbox-3a" type="checkbox" value="sausage">
+                        <label for="checkbox-3a">Sausage</label>
+                        <input data-ingredient="topping" name="checkbox-4a" id="checkbox-4a" type="checkbox" value="olives">
+                        <label for="checkbox-4a">Olives</label>
+                    </fieldset>
+                </div>
+            </div>
+            <br/>
+            <div class="ui-corner-all custom-corners">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Pizza Crusts</h3>
+                </div>
+                <div class="ui-body ui-body-a">
+                    <fieldset data-role="controlgroup">
+                        <legend>Select your pizza crust!</legend>
+                        <input data-ingredient="crust" name="radio-choice-1" id="radio-choice-1" value="thin" checked="checked" type="radio">
+                        <label for="radio-choice-1">Thin</label>
+                        <input data-ingredient="crust" name="radio-choice-1" id="radio-choice-2" value="pan" type="radio">
+                        <label for="radio-choice-2">Pan</label>
+                        <input data-ingredient="crust" name="radio-choice-1" id="radio-choice-3" value="hand tossed" type="radio">
+                        <label for="radio-choice-3">Hand Tossed</label>
+                        <input data-ingredient="crust" name="radio-choice-1" id="radio-choice-4" value="stuffed" type="radio">
+                        <label for="radio-choice-4">Stuffed</label>
+                    </fieldset>
+                </div>
+            </div>
+            <br/>
+            <div class="ui-corner-all custom-corners">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Drinks</h3>
+                </div>
+                <div class="ui-body ui-body-a">
+                    <label for="pepsi">Pepsi</label>
+                    <input name="pepsi" id="pepsi" value="0" min="0" max="10" step="1" data-highlight="true" type="range">
+                    <br/>
+                    <label for="mountain-dew">Mountain Dew</label>
+                    <input name="mountain-dew" id="mountain-dew" value="0" min="0" max="10" step="1" data-highlight="true" type="range">
+                    <br/>
+                    <label for="seven-up">Seven Up</label>
+                    <input name="seven-up" id="seven-up" value="0" min="0" max="10" step="1" data-highlight="true" type="range">
+                    <br/>
+                    <label for="diet-pepsi">Diet Pepsi</label>
+                    <input name="diet-pepsi" id="diet-pepsi" value="0" min="0" max="10" step="1" data-highlight="true" type="range">
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <a href="#order" class="ui-btn" id="add">Add to Order</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="order"><!---------------------------------------Start Order Page---------------->
+        <div data-role="header">
+            <a href="#home" data-icon="back" title="Back to Home Page">Home</a>
+            <h1>Order</h1>
+            <div data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a class="menu" href="#menu">Menu</a></li>
+                    <li><a class="order ui-btn-active ui-state-persist" href="#order">Order</a></li>
+                    <li><a class="location" href="#location">Location</a></li>
+                    <li><a class="about-us" href="#about-us">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="ui-corner-all custom-corners" id="order-view">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Current Order</h3>
+                </div>
+                <div class="ui-body ui-body-a">
+                    <ul class="capitalize">
+                        <li>Toppings
+                            <ul id="toppings">
+
+                            </ul>
+                        </li>
+                        <li>Crust
+                            <ul id="crust">
+
+                            </ul>
+                        </li>
+                        <li>Drinks
+                            <ul id="drinks">
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="ui-btn ui-btn-active" id="show">Show current order</a>
+            <a href="#" class="ui-btn ui-btn-active" id="save">Save favorite order</a>
+            <a href="#" class="ui-btn ui-btn-active" id="submit">Submit order</a>
+        </div>
+        <div data-role="footer" data-position="fixed">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="location"><!---------------------------------------Start Location Page---------------->
+        <div data-role="header">
+            <a href="#home" data-icon="back" title="Back to Home Page">Home</a>
+            <h1>Location</h1>
+            <div data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a class="menu" href="#menu">Menu</a></li>
+                    <li><a class="order" href="#order">Order</a></li>
+                    <li><a class="location ui-btn-active ui-state-persist" href="#location">Location</a></li>
+                    <li><a class="about-us" href="#about-us">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content" id="gmap">
+        </div>
+        <div data-role="footer" data-position="fixed">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="about-us"><!---------------------------------------Start About Us Page---------------->
+        <div data-role="header">
+            <a href="#home" data-icon="back" title="Back to Home Page">Home</a>
+            <h1>About Us</h1>
+            <div data-role="navbar" data-grid="c">
+                <ul>
+                    <li><a class="menu" href="#menu">Menu</a></li>
+                    <li><a class="order" href="#order">Order</a></li>
+                    <li><a class="location" href="#location">Location</a></li>
+                    <li><a class="about-us ui-btn-active ui-state-persist" href="#about-us">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div data-role="main" class="ui-content">
+            <h2>Meet Our Family.</h2>
+            <p>Our great-grandparents came to this country when world war swept Europe in 1939. They weren't able to save many of their material possessions but they had a wealth of <strong>Old World Italian Recipes</strong> stored safely in their memory. Soon after arriving in America they moved here and built this restaurant where we still serve authentic Italian food made the freshest of fine ingredients! Thank you for joining us at our table!</p>
+            <h2>Don't Wait!</h2>
+            <p>Don't wait to visit Rome! Come in and let us serve you the Finest Pizza this side of the Coliseum!</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+
+        </div>
+    </div>
+
+    <div data-role="page" id="contact"><!---------------------------------------Start Contact Page---------------->
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+            <h1>Contact Us by Phone Now!</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <a href="tel: +5093449187" class="ui-btn">(509) 344-9187</a>
+        </div>
+    </div>
+
+
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
