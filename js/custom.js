@@ -80,8 +80,7 @@ $(function(){
             type: "POST",
             data: {order: JSON.stringify(favorite)},
             success: function(data){
-                navigator.notification.beep(2);
-                navigator.notification.alert(data, alertDismissed, 'Have a Nice Day!', 'Okay');
+                notify(data);
             }
         })
     })
@@ -89,4 +88,9 @@ $(function(){
 
 function alertDismissed() {
     $.mobile.pageContainer.pagecontainer("change", "#home");
+}
+
+function notify(data) {
+    navigator.notification.beep(2);
+    navigator.notification.alert(data, alertDismissed, 'Have a Nice Day!', 'Okay');
 }
