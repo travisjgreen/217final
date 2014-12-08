@@ -69,6 +69,7 @@ $(function(){
         e.preventDefault();
         if(typeof(Storage) !== "undefined") {
             localStorage.favoriteOrder = JSON.stringify(favorite);
+            alert("Order saved as 'favorite'.")
         } else {
             alert("Sorry! No Web Storage support..");
         }
