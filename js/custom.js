@@ -75,7 +75,6 @@ $(function(){
 
     }).on("click", "#submit", function(e){
         e.preventDefault();
-        alert("button clicked");
         $.ajax({
             url: "http://217-mobile.travisjgreen.com/mailer.php",
             type: "POST",
