@@ -75,14 +75,12 @@ $(function(){
 
     }).on("click", "#submit", function(e){
         e.preventDefault();
-        navigator.notification.beep(7);
         $.ajax({
             url: "http://217-mobile.travisjgreen.com/mailer.php",
             type: "POST",
             data: {order: JSON.stringify(favorite)},
             success: function(data){
-                navigator.notification.beep(2);
-                navigator.notification.alert(data);
+                alert(data);
             }
         })
     });
